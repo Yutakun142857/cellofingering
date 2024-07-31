@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>運指探索ツール</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    音入力<br><textarea id="inotes" rows="1">0 2 4 5 7 9 11 12</textarea><br>
+    <span id="onotes"></span><br>
+    <table id="board" border="1"></table>
+    <p>
+        <span id="pr">候補：-/-　運指：-/-　スコア：-</span><br>
+        <button id="a">前の候補</button> <button id="b">前の指</button> <button id="c">次の指</button> <button id="d">次の候補</button> <br>
+        ビーム幅 <input type="number" id="bw" value="500"><br>
+        ーポジションコストー<br>
+        拡張コスト <input type="number" id="ex" value="2"><br>
+        高さコスト <input type="number" id="hp" value="1"><br>
+        開放弦コスト <input type="number" id="op" value="10"><br>
+        隣接指コスト <input type="number" id="fd" value="6"><br>
+        ー移動時コストー<br>
+        移動距離コスト <input type="number" id="mv" value="8"><br>
+        移動距離コスト(開放弦中) <input type="number" id="mo" value="4"><br>
+        移動の早さコスト <input type="number" id="me" value="12"><br>
+        移動回数コスト <input type="number" id="mc" value="6"><br>
+        音移弦コスト <input type="number" id="ms" value="2"><br>
+        <span id="btn"><button id="search">探索</button></span><span id="pr2"></span>
+    </p>
+    <h3>このツールの使い方</h3>
+    <p>何かと微妙な運指が表示されるでしょう<br>
+        ー入力ー<br>
+        音入力：半角、スペース区切りで入力。一番下からCが0、C♯が1...<br>
+        ー出力ー<br>
+        灰色の○：指の位置<br>
+        赤色の○：今弾いている音<br>
+        スコア：低ければ低いほどいい<br>
+        ーパラメーター<br>
+        ビーム幅：候補の数と同じ<br>
+        拡張コスト：拡張をしているときのコスト<br>
+        高さコスト：高いポジションにいるときのコスト倍率(中指の高さ基準)<br>
+        開放弦コスト：どれだけ開放弦を避けようとするか<br>
+        隣接指コスト：隣の指と弦が離れているときのコスト倍率<br>
+        移動距離コスト：半音分や1つ隣の弦に移動する時のコスト<br>
+        移動距離コスト(開放弦中)：開放弦で弾いているときに半音分や1つ隣の弦に移動する時のコスト<br>
+        移動の早さコスト：早く移動しないとだんだん増えるコスト<br>
+        音移弦コスト：音が移弦したときにかかるコスト
+    </p>
+    <script src="js/src.js"></script>
+</body>
+
+</html>
